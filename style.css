@@ -1,0 +1,154 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* OS " -- NOME " RECEBE ISSO PORQUE É UMA VARIAVEL */
+/* NO root é o desinger escuro, recebendo os elementos, cores em brancos.*/
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255,255,255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255,255,255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+
+}
+/*Aqui ré o designer branco, recebendo cores escuras.*/
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0,0,0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+     --switch-bg-url: url(./assets/sun.svg);
+}
+body {
+/*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+    background: var(--bg-url) no-repeat top center/cover; /* isto é um agrupamento dos codigos acima */
+}
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+#container {
+    width: 360px;
+    margin: 56px auto 0px;/*Tem uma regra que ele não aplica em cima e nem embaixo*/
+    padding: 0 24px;
+}
+
+/*  PROFILE */
+#profile {
+    text-align: center;
+    padding: 24px; /*Preenche a caixa por igual*/
+}
+#profile img {
+    width: 112px;
+    position: relative;
+    
+}
+#profile {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+/*Switch div pai*/
+#switch {
+    margin: 4px auto;
+    position: relative;
+    width: 64px;
+}
+/*Criando o sol e a lua. dark mode or light mode*/
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 1;
+}
+
+/* TROCA DE BOTOES */
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+/*Botão barra que fica atras do sol para criar movimento de ida ou volta*/
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    /* surface-color-dark-mode */
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+/*Posicionar elementos com sobrepor um em cima do outro.*/
+
+/* Links */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0 ;
+}
+ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background .2s;
+}
+/*Pseudo-selector*/
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+/*Social Links*/
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    font-size: 24px;
+}
+#social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+#social-links a:hover {
+    background: var(--highlight-color);
+}
+
+/* FOOTER*/
+footer {
+    padding: 0 0;
+    text-align: center;
+    font-size: 14px;
+}
