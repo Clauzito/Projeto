@@ -39,9 +39,10 @@ body * {
     color: var(--text-color);
 }
 #container {
-    width: 360px;
+    width: 100%;
     margin: 56px auto 0px;/*Tem uma regra que ele não aplica em cima e nem embaixo*/
     padding: 0 24px;
+    max-width: 588px;
 }
 
 /*  PROFILE */
