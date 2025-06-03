@@ -53,6 +53,7 @@ body * {
 #profile img {
     width: 112px;
     position: relative;
+    border-radius: 50%;
     
 }
 #profile {
