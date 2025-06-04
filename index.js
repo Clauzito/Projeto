@@ -12,7 +12,7 @@ function toggleMode() {
         img.setAttribute('src', './assets/avatar-light.png')
      } else {
             // se não tiver light mode, manter a normal.
-        img.setAttribute('src', './assets/avatar.png')
+        img.setAttribute('src', './assets/Avatar.png')
     } 
 
    // Este codigo faz o mesmo que o outro só que com menas linahs de codigo.
