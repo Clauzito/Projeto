@@ -81,12 +81,16 @@ body * {
     transform: translateY(-50%);
     left: 0;
     z-index: 1;
+    animation: slide-back .2s;
+}
+/* Quando passar o mouse em cima */
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 /* TROCA DE BOTOES */
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in .2s forwards;
 }
 
 /*Botão barra que fica atras do sol para criar movimento de ida ou volta*/
@@ -160,6 +164,24 @@ footer {
         --bg-url: url(./assets/bg-desktop.jpg);
     }   
     .light {
-        --bg--url: url(./assets/bg-desktop-light.jpg );
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+/* Animations - Mais conhecidas como @keyframes {} */
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+} 
+
+@keyframes slide-back {
+    from { 
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
